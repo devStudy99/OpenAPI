@@ -25,6 +25,15 @@ const GlobalStyles = createGlobalStyle`
   input:focus {
     outline: none;
   }
+
+  .marker {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
 `;
 
 export default GlobalStyles;

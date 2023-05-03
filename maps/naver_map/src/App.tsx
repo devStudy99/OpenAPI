@@ -1,9 +1,23 @@
 import React from "react";
-import "./App.css";
 import MapContainer from "./components/MapContainer";
+import { useSetAtom } from "jotai";
+import { infosAtom } from "./atoms/info";
+import { infos } from "./data/infos";
+import MarkersContainer from "./components/MarkersContainer";
 
 function App() {
-  return <MapContainer />;
+  const setInfos = useSetAtom(infosAtom);
+
+  if (infos) {
+    setInfos(infos);
+  }
+
+  return (
+    <>
+      <MapContainer />
+      <MarkersContainer />
+    </>
+  );
 }
 
 export default App;
