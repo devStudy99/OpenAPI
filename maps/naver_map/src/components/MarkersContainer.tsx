@@ -4,6 +4,7 @@ import { mapAtom } from "../atoms/map";
 import { infosAtom, selectInfoAtom } from "../atoms/info";
 import { Info } from "../types/info";
 import Marker from "./Marker";
+import InfoWindow from "./InfoWindow";
 
 function MarkersContainer() {
   const map = useAtomValue(mapAtom);
@@ -38,6 +39,7 @@ function MarkersContainer() {
           }}
         />
       )}
+      <InfoWindow map={map} selectInfo={selectInfo} />
     </>
   );
 }

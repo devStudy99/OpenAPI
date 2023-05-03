@@ -38,6 +38,37 @@ const GlobalStyles = createGlobalStyle`
   background: blue;
   }
 
+  .infoBox {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }
+
+  .infoPlaceName {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  .infoAddressName {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .infoSubmit {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    background: #0f2cc5;
+    margin-top: 6px;
+    padding: 6px 0px;
+  }
+
+
 `;
 
 export default GlobalStyles;
