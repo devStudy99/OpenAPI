@@ -26,6 +26,17 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
   }
 
+  .marker {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .marker.select {
+  background: blue;
+  }
 `;
 
 export default GlobalStyles;

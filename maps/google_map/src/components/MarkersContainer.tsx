@@ -1,10 +1,10 @@
 import React from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { mapAtom } from "../atoms/map";
+import Marker from "./Marker";
 import { infosAtom, selectInfoAtom } from "../atoms/info";
 import { Info } from "../types/info";
-import Marker from "./Marker";
-import InfoWindow from "./InfoWindow";
+import CircleIcon from "./custom_icons/CircleIcon";
 
 function MarkersContainer() {
   const map = useAtomValue(mapAtom);
@@ -20,7 +20,7 @@ function MarkersContainer() {
           key={info.id}
           map={map}
           position={info.position}
-          content={`<div class="marker" />`}
+          htmlIcon={CircleIcon("red")}
           onClick={() => {
             setSelectInfo(info);
             map.panTo(info.position);
@@ -32,13 +32,12 @@ function MarkersContainer() {
           key={selectInfo.id}
           map={map}
           position={selectInfo.position}
-          content={'<div class="marker select" />'}
+          htmlIcon={CircleIcon("blue")}
           onClick={() => {
             setSelectInfo(null);
           }}
         />
       )}
-      <InfoWindow map={map} selectInfo={selectInfo} />
     </>
   );
 }
