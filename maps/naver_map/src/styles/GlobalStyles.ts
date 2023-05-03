@@ -34,6 +34,10 @@ const GlobalStyles = createGlobalStyle`
   border: 1px solid rgba(0, 0, 0, 0.4);
   }
 
+  .marker.select {
+  background: blue;
+  }
+
 `;
 
 export default GlobalStyles;

@@ -1,13 +1,14 @@
 import React from "react";
-import { useAtomValue } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { mapAtom } from "../atoms/map";
-import { infosAtom } from "../atoms/info";
+import { infosAtom, selectInfoAtom } from "../atoms/info";
 import { Info } from "../types/info";
 import Marker from "./Marker";
 
 function MarkersContainer() {
   const map = useAtomValue(mapAtom);
   const infos = useAtomValue(infosAtom);
+  const [selectInfo, setSelectInfo] = useAtom(selectInfoAtom);
 
   if (!map || !infos) return null;
 
@@ -20,10 +21,23 @@ function MarkersContainer() {
           position={info.position}
           content={`<div class="marker" />`}
           onClick={() => {
+            setSelectInfo(info);
             map.panTo(info.position);
           }}
         />
       ))}
+      {selectInfo && (
+        <Marker
+          key={selectInfo.id}
+          map={map}
+          position={selectInfo.position}
+          content={'<div class="marker select" />'}
+          onClick={() => {
+            console.log("asd");
+            setSelectInfo(null);
+          }}
+        />
+      )}
     </>
   );
 }
