@@ -26,16 +26,25 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
   }
 
-  .marker {
-  width: 20px;
-  height: 20px;
-  background: red;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  .infoPlaceName {
+    font-size: 14px;
+    font-weight: bolder;
   }
 
-  .marker.select {
-  background: blue;
+  .infoAddressName {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .infoSubmit {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    background: #0f2cc5;
+    margin-top: 6px;
+    padding: 6px 0px;
   }
 `;
 

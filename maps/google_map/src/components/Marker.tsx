@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { useSetAtom } from "jotai";
+import { markerAtom } from "../atoms/marker";
 
 interface MarkerProps {
   map: google.maps.Map;
@@ -16,6 +18,7 @@ interface MarkerProps {
 }
 
 function Marker({ map, position, onClick, htmlIcon }: MarkerProps) {
+  const setMarker = useSetAtom(markerAtom);
   useEffect(() => {
     let marker: google.maps.Marker | null = null;
     if (map) {
@@ -28,6 +31,7 @@ function Marker({ map, position, onClick, htmlIcon }: MarkerProps) {
 
     if (onClick && marker) {
       google.maps.event.addListener(marker, "click", onClick);
+      setMarker(marker);
     }
 
     return () => {

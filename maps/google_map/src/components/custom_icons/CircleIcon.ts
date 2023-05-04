@@ -7,7 +7,7 @@ const CircleIcon = (color: string) => {
       encodeURIComponent(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="0.5" cx="10" cy="10" r="7"/><circle fill="#f00" cx="10" cy="10" r="7"/></svg>'
       ),
-    scaledSize: new google.maps.Size(40, 40),
+    scaledSize: new google.maps.Size(25, 25),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(20, 20),
   };
@@ -18,7 +18,7 @@ const CircleIcon = (color: string) => {
       encodeURIComponent(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="0.5" cx="10" cy="10" r="7"/><circle fill="#0d00ff" cx="10" cy="10" r="7"/></svg>'
       ),
-    scaledSize: new google.maps.Size(40, 40),
+    scaledSize: new google.maps.Size(25, 25),
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(20, 20),
   };

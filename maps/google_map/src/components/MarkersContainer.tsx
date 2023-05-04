@@ -5,6 +5,7 @@ import Marker from "./Marker";
 import { infosAtom, selectInfoAtom } from "../atoms/info";
 import { Info } from "../types/info";
 import CircleIcon from "./custom_icons/CircleIcon";
+import InfoWindow from "./InfoWindow";
 
 function MarkersContainer() {
   const map = useAtomValue(mapAtom);
@@ -38,6 +39,7 @@ function MarkersContainer() {
           }}
         />
       )}
+      <InfoWindow map={map} selectInfo={selectInfo} />
     </>
   );
 }
